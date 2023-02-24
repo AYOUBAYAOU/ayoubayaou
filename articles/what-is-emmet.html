@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>What Is Emmet</title>
+    <meta content="" name="description">
+    <meta content="programming, web, front end, كيفية كتابة كود سريع, what is emmet, fast code, vs code, extension"
+        name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/ayoub.jpg" rel="icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Default Card -->
+    <div class="card container" style="font-size: 20px;font-weight: 400;">
+        <div dir="rtl" class="card-body">
+            <h1 class="card-title" style="
+            font-size: 20px;
+            background: #6ad26d;
+            color: #fff;
+            width: fit-content;
+            margin-top: 16px;
+            padding: 9px;
+            border-radius: 12px;
+            ">كيفية كتابة كود سريع</h1>
+            في هذه المقالة سنتحدث عن كيفية الكتابة بشكل أسرع في محرر visual studio code طريقة كتابة كورد سريع بإستعمال
+            Emmet إعتبرها مثل إختصارات لكتابة الأوسام
+            هنا سنتعرف على طريقة كتابة عنصر داخل عنصر بطريقة سريعة كنا في السابقة نفتح وسم وننهيه و نغلقه و نكتبه داخله
+            وسم آخر وهذا بطئ جدااا لهذا سنكتب بطرقة ال Emmet أولا لكتابة عنصر داخل عنصر نكتب هكذا
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">div>h1</span>
+</pre>
+</code>
+            ستكون النتيجة عند الطغظ على Enter
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">div</span>>
+    &lt<span style="color: #f45;">h1</span>>&lt;/<span style="color: #f45;">h1</span>>
+&lt;/<span style="color: #f45;">div</span>>
+</pre>
+</code>
+            كما ترون بدل كتابة كل هذا سنكت بطريقة مختصرة كنا ترون الآن كيف أكتب نص داخلها بهذه الطريقة :
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">div>h1{Hello World}</span>
+</pre>
+</code>
+            كما ترون بسيطة نطغظ على Enter ستكون النتيجة
+            &lt;div>
+            &lt;h1>Hello World&lt;/h1>
+            &lt;/div>
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">div</span>>
+    &lt<span style="color: #f45;">h1</span>>Hello World&lt;/<span style="color: #f45;">h1</span>>
+&lt;/<span style="color: #f45;">div</span>>
+</pre>
+</code>
+            أعجبك الأمر نعم ستكون الآن سريعا في كتابة الكود الخاص بك الآن لكتابة السمات أو attributes هنا لكتابة
+            attributes id and class نكتب بهذه الطريقة
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">.nama</span>
+</pre>
+</code>
+            ستكون النتيجة عند الطغظ على Enter
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">div</span> class="name">&lt;/<span style="color: #f45;">div</span>>
+</pre>
+</code>
+            كما ترون نحدد الكلاس فقط بنقطة هنا لماذا ظهر معنا div لأنه وسم مشهور لتحديد عنصر معين نكتب
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">h1.test</span>
+</pre>
+</code>
+            النتيجة ستكون
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">h1</span> class="test">&lt;/<span style="color: #f45;">h1</span>>
+</pre>
+</code>
+            كنا ترون أمر بسيط نفس الشيء بالنسبة لل id نعم أعتقد أنك خممت فيها انت ذكي نستعمل بذل النقطة علامة الهاش #
+            لكتابة ال id
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">#nama</span>
+</pre>
+</code>
+            ستكون النتيجة
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">div</span> id="name">&lt;/<span style="color: #f45;">div</span>>
+</pre>
+</code>
+            كما ترون أمر بسيط هنا لدينا عنصر div لتغييره نكتب هكذا
+<br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">p#test</span>
+</pre>
+</code>
+            ستكون النتيجة
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">p</span> id="test">&lt;/<span style="color: #f45;">p</span>>
+</pre>
+</code>
+            هنا تعرفنا على ال id و ال class
+            لعمل attributes أخرى نكتب هكذا
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">div[title="test"]</span>
+</pre>
+</code>
+            بهذه الطريقة هناك يمكنك كتابة أي سمة تريدها نطغظ على Enter ستكون النتيجة
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">div</span> title="test">&lt;/<span style="color: #f45;">div</span>>
+</pre>
+</code>
+            الآن إذا أردنا كتابة عنصران مع بعض يعني ليس عنصر داخل عنصر سنكتب عنصر يليه عنصر نكتب هكذا بعلامة +
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">div+p</span>
+</pre>
+</code>
+            ستكون النتيجة عند الطغظ على Enter
+            &lt;div>&lt;/div>
+            &lt;p>&lt;/p>
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">div</span>>&lt;/<span style="color: #f45;">div</span>>
+&lt;<span style="color: #f45;">p</span>>&lt;/<span style="color: #f45;">p</span>>
+</pre>
+</code>
+            كنا ترون الأمر بسيط جدا الأن مع التكرار يمكننا تكرار العنصر أكثر من مرة بدلا من كتابتها بنفسك مثلا تريد عمل
+            100 li ستكتبها بنفسك ولكن بإستعمال ال Emmet ستكتبها في ثانية نستعمل هنا علامة *
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #999">ul > li * 3</span>
+</pre>
+</code>
+            هنا ستكون النتيجة
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">ul</span>>
+    &lt;<span style="color: #f45;">li</span>>&lt;/<span style="color: #f45;">li</span>>
+    &lt;<span style="color: #f45;">li</span>>&lt;/<span style="color: #f45;">li</span>>
+    &lt;<span style="color: #f45;">li</span>>&lt;/<span style="color: #f45;">li</span>>
+&lt;/<span style="color: #f45;">ul</span>>
+</pre>
+</code>
+            هنا كما ترون يمكنك دمج كل ماسبق نعم ومكتابة نص داخلها و attribute معينة هناك العديد من العلامات و الإختصارات
+            يمكنك البحث عن المزيد مثل grouping علامة $ علامة ^ هناك العديد ماذا تنتظر كن سريعا في كتابة الكود الخاص بك
+            وشكرا أتمنى أن تعجبكم مقالتنا المتواضعة و البسيطة وشكرا لكم.
+        </div>
+    </div><!-- End Default Card -->
+
+    <!-- ======= Footer ======= -->
+    <footer
+        style="width: 100%; text-align: center;background-color: #111;color: #fff; padding: 15px; border-radius: 30px 30px 0  0;">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Ayoub Ayaou</span></strong>
+            <div style="margin-top: 8px;">
+                <a href="https://www.facebook.com/profile.php?id=100089323987983">
+                    <i style="margin-right: 10px;color: #999" class="bi-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@ayoubayaou">
+                    <i style="margin-right: 10px;color: #999" class="bi-youtube"></i>
+                </a>
+                <a href="https://instagram.com/ayoub.ayaou?igshid=YmMyMTA2M2Y=">
+                    <i style="margin-right: 10px;color: #999" class="bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.min.js"></script>
+
+</body>
+
+</html>

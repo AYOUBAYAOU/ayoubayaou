@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Ayoub Ayaou</title>
+    <meta content="" name="description">
+    <meta
+        content="ماهي لغة JavaScript ؟, JavaScript, ES6, programming, web, front end, what is JavaScript, what is js, tag"
+        name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/ayoub.jpg" rel="icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Default Card -->
+    <div class="card container" style="font-size: 20px;font-weight: 400;">
+        <div dir="rtl" class="card-body">
+            <h1 class="card-title" style="
+            font-size: 20px;
+            background: #FFC107;
+            width: fit-content;
+            margin-top: 16px;
+            padding: 9px;
+            border-radius: 12px;
+            ">ماوضيفة هذه العلامة ~؟</h1>
+            قد ترى كود معين في لغة JavaScript و تجد هذه العلامات "~~" و تريد معرفة دورها في اللغة بماذا تقوم في هذا
+            المقال سنتعرف على دور هذه العلامات في اللغة.
+            أولا دور هذه العلامات هو تقريب الرقم مثلا لذيك 9.6 عند إستعمال هذه العلامات سيصبح الناتج 9 هي مثل إستخدام
+            Math.floor الآن سنتعرف على طريقة الكتابة نكتب بهذه الطريقة: <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(~~6.9)
+</pre>
+</code>
+            سيصبح الناتج 6 إذا إستخدامنا Math.floor الآن
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(Math.<span style="color: #edc823;">floor</span>(6.9))
+</pre>
+</code>
+            سيصبح نفس الناتج 6
+            يعني لو قمنا بمقارنتهم
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(Math.<span style="color: #edc823;">floor</span>(6.9) === ~~6.9)
+</pre>
+</code>
+            الناتج سيصبح true
+            الآن لو إستخدامنا علامة واحدة غير علامتين يعني هكذا
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(~6.9)
+</pre>
+</code>
+            الناتج سيكون -7
+            الآن لو قمنا بتجربتها مع String
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(~~"test")
+</pre>
+</code>
+            سيصبح الناتج 0
+            الآن لو قمنا بتجربة علامة واحدة فقط مع String
+            console.
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(~"test")
+</pre>
+</code>
+            الناتج سيصبح -1
+            <br>
+            الآن إنتهينا من هذه المقالة السيطة أتمنى أن تستفيدو معنا و وفقكم الله.
+        </div>
+    </div><!-- End Default Card -->
+
+
+    <!-- ======= Footer ======= -->
+    <footer
+        style="width: 100%; text-align: center;background-color: #111;color: #fff; padding: 15px; border-radius: 30px 30px 0  0;">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Ayoub Ayaou</span></strong>
+            <div style="margin-top: 8px;">
+                <a href="https://www.facebook.com/profile.php?id=100089323987983">
+                    <i style="margin-right: 10px;color: #999" class="bi-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@ayoubayaou">
+                    <i style="margin-right: 10px;color: #999" class="bi-youtube"></i>
+                </a>
+                <a href="https://instagram.com/ayoub.ayaou?igshid=YmMyMTA2M2Y=">
+                    <i style="margin-right: 10px;color: #999" class="bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.min.js"></script>
+
+</body>
+
+</html>

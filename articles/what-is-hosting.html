@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>What Is javascript hosting</title>
+    <meta content="" name="description">
+    <meta content="ماهي لغة JavaScript ؟, JavaScript, ES6, programming, web, front end, what is JavaScript, what is js, مفاهيم متقدمة في لغة الجافا سكريبت, what-is-type-coercion,
+    ماهو hosting, what is hosting, javascript hosting, hosting, رفع لغة الجافا سكريبت للمتغيرات," name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/ayoub.jpg" rel="icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Default Card -->
+    <div class="card container" style="font-size: 20px;font-weight: 400;">
+        <div dir="rtl" class="card-body">
+            <h1 class="card-title" style="
+            font-size: 20px;
+            background: #FFEB3B;
+            width: fit-content;
+            margin-top: 16px;
+            padding: 9px;
+            border-radius: 12px;
+            ">ماهو hosting؟</h1>
+            ماهو hosting؟ هو عند رافع الجافا سكريبت للمتغير الخاص بنا وتعريفه في الأعلى و هذا يحصل فقط عند إستعمال
+            الكلمة المفتاحية var أما إذا إستعملت let أو const سيظهر معك خطاء الآن بعد تعرفنا على نبدة بسيطة من hosting
+            في لغة ال JavaScript سنتعرف مالذي يأدي لغة ال JavaScript للرفع المتغير للكلمة المفتاحية var هنا يحصل الرفع
+            أو ال hosting عند طباعة المتغير قبل تعريفه أو إنشائه مثال بدون ال hosting
+            <br><br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">var</span> x = "ayoub";
+<span style="color: #edc823;">console</span>.log(x)
+</pre>
+</code>
+            ستكون النتيجة ayoub بدون أي مشكل الآن ماذا لو عكسنا الأمر
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(x)
+<span style="color: #edc823;">var</span> x = "ayoub";
+</pre>
+</code>
+            نا قمنا بطباعة المتغير قبل إنشائه إذا سألتك ماذا ستكون النتيجة؟ ستكون undefined ستقول لماذا لم تطبع كلمة
+            ayoub سأقول لك لغة ال JavaScript تقوم برفع المتغير الى أعلى الصفحة وتفرغه هنا تحدث عملية ال hosting هكذا
+            تتعامل لغة ال JavaScript مع الكلمة المفتاحية var هنا في هذا المثال كما ترى تقوم برفعه إلى الأعلى متغير فارغ
+            سيطبع معك بالتأكيد undefined
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">var</span> x;
+<span style="color: #edc823;">console</span>.log(x)
+</pre>
+</code>
+            النتيجة ستكون undefined
+            الآن عند إستخدام let و const سيطبع معنا بدون أي شرح مفصل خطاء الكلماتان المفتاحيتان let و const لا تتعرض لل
+            hosting أو الرفع كما يظهر معك هنا:
+            <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">console</span>.log(x)
+<span style="color: #edc823;">let</span> x;
+<span style="color: #888">//output Error</span>
+
+<span style="color: #edc823;">console</span>.log(x)
+<span style="color: #edc823;">const</span> x;
+<span style="color: #888">//output Error</span>
+</pre>
+</code>
+            وهكذا إنتهينا من مقالتنا البسيطة أتمنى دعمنا ومشاركة الموقع مع الناس شكرا لكم
+            للفهم أكثر يوجد في <a href="https://www.youtube.com/@ayoubayaou">قناتنا</a> في دورة لغة الجافا سكريبت شرح مفصل عن الرف أو hosting
+            يمكنك تفقده.
+        </div>
+    </div><!-- End Default Card -->
+
+
+    <!-- ======= Footer ======= -->
+    <footer
+        style="width: 100%; text-align: center;background-color: #111;color: #fff; padding: 15px; border-radius: 30px 30px 0  0;">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Ayoub Ayaou</span></strong>
+            <div style="margin-top: 8px;">
+                <a href="https://www.facebook.com/profile.php?id=100089323987983">
+                    <i style="margin-right: 10px;color: #999" class="bi-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@ayoubayaou">
+                    <i style="margin-right: 10px;color: #999" class="bi-youtube"></i>
+                </a>
+                <a href="https://instagram.com/ayoub.ayaou?igshid=YmMyMTA2M2Y=">
+                    <i style="margin-right: 10px;color: #999" class="bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.min.js"></script>
+
+</body>
+
+</html>

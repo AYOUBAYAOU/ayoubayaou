@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>What Is JavaScript</title>
+    <meta content="" name="description">
+    <meta content="ماهي لغة JavaScript ؟, JavaScript, ES6, programming, web, front end, what is JavaScript, what is js" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/ayoub.jpg" rel="icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Default Card -->
+    <div class="card container" style="font-size: 20px;font-weight: 400;">
+        <div dir="rtl" class="card-body">
+            <h1 class="card-title" style="
+            font-size: 20px;
+            background: #FFEB3B;
+            width: fit-content;
+            margin-top: 16px;
+            padding: 9px;
+            border-radius: 12px;
+            ">ماهي لغة JavaScript؟</h1>
+            لغة JavaScript هي عبارة عن لغة برمجة عالية المستوى هذا لا يعني صعوبتها بل هي لغة سهلة ومرنة في الكتابة فقط
+            مع التطبيق العملي ستفهمها وتتقنها أكثر كما تعلم فأول محطتين في مجال تطوير المواقع هما لغات html و css هنا
+            <a href="./what-is-html.html">مقالة للتعرف على لغة html</a>, <a href="./what-is-css.html">و أخرى على لغة css</a> لتفهمهما بشكل أفضل و مفصل كما تعلم شبهنا هذه اللغات بالبيت قلنا
+            لغة html عبارة عن هيكل البيت و لغة css هي عبارة عن ديكور البيت من صباغة و آتاث وغيرها... من التصاميم هنا
+            البيت عبارة عن تصميم و هيكل فقط يعني بيت ساكن ميت لا يقوم بشيء فقط دوره هو أن ترى فقط هنا دور الجافا سكريبت
+            لجعل البيت فيه حركية و تفاعلية ماذا نحتاج نحتاج إلى الكهرباء و الماء عند الطغظ على المكبس الكهربائي سيشتغل
+            الضوء هنا لدينا أحداث نفس الشيء بالنسبة للمواقع لجعلها تفاعلية أكثر مثال آخر في الحقيقة لنفترض نريد أن نعمل
+            زر الوضع المظلم هنا سنقوم بعمل هيكل الزر بلغة ال html و سنصممه بلغة ال CSS والآن لدينا التصميم والهيكل الزر
+            ميت ساكل لا يعمل أي شيء هنا سنستعمل لغة JavaScript عند الضغط على الزر ستصبح الصفحة سوداء هل نفس الشيء
+            بالنسبة للبيت نعم نعم يتم تطوير لغة JavaScript من طرف لجنة TC39 المدارة بواسطة منظمة EACMA للمعايير قد لا
+            يفرق بعض الناس هن إختلافها مع لغة ال JAVA ولكن هما مختلفتان بالكامل واحدة خاصة بالمواقع والأخرى خاصة
+            بالتطبيقات ولماذا تقارب الأساء هنا فقط قضية التسويق لأن لغة ال java حصلت على شهرة عالية و سموها لغة
+            JavaScript للتسويق لها وظهورها أمر بسيط جدا مثال على كود لغة الجافا سكريبت <br> <br>
+            هنا سنكتب هيكل الزر بلغة ال HTML: <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45;">button</span>>click Me!&lt;/<span style="color: #f45;">button</span>>
+</pre>
+</code>
+وهنا تنسيق الزر بواسطة ال css: <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">button</span> {
+    background-color<span style="color: #999">:</span> #f45;
+    outline<span style="color: #999">:</span> none;
+    width<span style="color: #999">:</span> 100px;
+    height<span style="color: #999">:</span> 30px;
+    color<span style="color: #999">:</span> #fff;
+    border-radius<span style="color: #999">:</span> 10px;
+}
+</pre>
+</code>
+هنا كود لغة الجافا سكريبت: <br> <br>
+<code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+<span style="color: #edc823;">var</span> btn = document.<span style="color: #edc823;">querySelector</span>("button");
+btn.onclick = function () <span style="color: #656565;">{</span>
+    <span style="color: #f45">document</span>.body.style.background = <span style="color: #15e915">"black"</span>;
+<span style="color: #656565;">}</span>
+</pre>
+</code>
+            ستحس بأن الكود صعب ولكن العكس لا تفشل نفسك من رأية شيء لم تتعلمه حتى الأن
+            إنطلق في هذه اللغة الجميلة يابطل و وفقك الله توجد دورة في <a href="https://www.youtube.com/@ayoubayaou">قناتنا</a> خاصة بهذه اللغة يمكنك 
+            تفقدها لم أتممها بعد ولكن إنشاء الله سأفعل وليكن الله في عونك.
+        </div>
+    </div><!-- End Default Card -->
+
+
+    <!-- ======= Footer ======= -->
+    <footer
+        style="width: 100%; text-align: center;background-color: #111;color: #fff; padding: 15px; border-radius: 30px 30px 0  0;">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Ayoub Ayaou</span></strong>
+            <div style="margin-top: 8px;">
+                <a href="https://www.facebook.com/profile.php?id=100089323987983">
+                    <i style="margin-right: 10px;color: #999" class="bi-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@ayoubayaou">
+                    <i style="margin-right: 10px;color: #999" class="bi-youtube"></i>
+                </a>
+                <a href="https://instagram.com/ayoub.ayaou?igshid=YmMyMTA2M2Y=">
+                    <i style="margin-right: 10px;color: #999" class="bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.min.js"></script>
+
+</body>
+
+</html>

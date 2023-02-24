@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>What Is placeholder</title>
+    <meta content="" name="description">
+    <meta content="كيف أستعمل موقع placeholder للحصول على الصور, programming, web, front end, placeholder, images"
+        name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/ayoub.jpg" rel="icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Default Card -->
+    <div class="card container" style="font-size: 20px;font-weight: 400;">
+        <div dir="rtl" class="card-body">
+            <h1 class="card-title" style="
+            font-size: 20px;
+            background: #E91E63;
+            color: #fff;
+            width: fit-content;
+            margin-top: 16px;
+            padding: 9px;
+            border-radius: 12px;
+            ">كيف أستعمل موقع placeholder للحصول على الصور؟</h1>
+            في هذا المقال الجديد سنتعرف على موقع جد رائع
+        أولا لا تملك صورا لتعلم إختبار لصور على موقعك و ستضطر إلى الذهاب إلى جوجل أو فايسبوك للبحث عن الصورة المطلوبة و
+        هذا سيكون مرهق وأنت تريد فقط تعمل test الموقع الخاص بك أو حتي في مرحلة التعلم تريد صورة لتّعلم منها و تجربتها.
+        الحل هو أن تكتب فقط رابط الموقع بهذا الشكل
+        <br><a href="https://via.placeholder.com/">https://via.placeholder.com/</a> <br>
+        طبعا ستكتبه في خاصية src الموجودة في وسم img أولا تحديد عرض الصورة سنكتب هكذا
+        <br><a href="https://via.placeholder.com/200x300">https://via.placeholder.com/200x300</a> <br>
+        بعد السلاش نكتب العرض والإرتفاع الخاص بالصور يمكنك كتابة أي عرض أو أرتفاع تريده و ستضهر معك الصورة في المتصفح
+        بنفس العرض والإرتفاع الذي حددته.
+        والآن نريد التحكم في الألوان مثلا خلفية الصورة و لون النص الذي سنتعرف على طريقة إضافة.
+        نكتب بهذا الشكل :
+        <br><a href="https://via.placeholder.com/200x300/F00/080">https://via.placeholder.com/200x300/F00/080</a> <br>
+        أعتقد سيكون لون الخلفية بالأحمر ولون النص الذي سنتعرف عليه الآن سيصبح باللون الأخطر
+        طريقة إضافة نص مع اللون الخاص به نضع بعد 080 النص الذي سيتلون بهذا اللون هكذا
+        <br><a href="https://via.placeholder.com/200x300/F00/080?text=Ayoub">https://via.placeholder.com/200x300/F00/080?text=Ayoub</a> <br>
+        لإضافة أكثر من نص نضع علامة +
+        <br><a href="https://via.placeholder.com/200x300/F00/080?text=Ayoub+Ayaou">https://via.placeholder.com/200x300/F00/080?text=Ayoub+Ayaou</a> <br>
+        تحدير لا تعمل مسافة في الرابط لإضافة أكثر من سطر تستعمل علامة + لأنك ستخرب الرابط ولن يعمل.
+        الآن ستكون النتيجة بهذا الشكل في كود html <br> <br>
+        <code dir="ltr" style="color: #fff">
+<pre style="background-color: #111; padding: 10px; border-radius: 5px; font-size: 16px;">
+&lt;<span style="color: #f45">img</span> <span style="color: orange">src</span>=<span style="color: greenyellow">"https://via.placeholder.com/200x300/F00/080?text=Ayoub+Ayaou"</span> <span style="color: orange">alt</span>=<span style="color: greenyellow">"this is test img"</span>>
+</pre>
+</code>
+        الرابط الخاص بنا
+        <br><a href="https://via.placeholder.com/200x300/F00/080?text=Ayoub+Ayaou">https://via.placeholder.com/200x300/F00/080?text=Ayoub+Ayaou</a><br>
+        أتمني أن يعجبكم المقال وأعتدر إن قلت أي معلومة خطأ المهم توصل الفكرة يوجد الكثير من المواقع غيره تأدي نفس
+        الوظيفة وشكرا لكم
+        </div>
+    </div><!-- End Default Card -->
+
+
+    <!-- ======= Footer ======= -->
+    <footer
+        style="width: 100%; text-align: center;background-color: #111;color: #fff; padding: 15px; border-radius: 30px 30px 0  0;">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Ayoub Ayaou</span></strong>
+            <div style="margin-top: 8px;">
+                <a href="https://www.facebook.com/profile.php?id=100089323987983">
+                    <i style="margin-right: 10px;color: #999" class="bi-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@ayoubayaou">
+                    <i style="margin-right: 10px;color: #999" class="bi-youtube"></i>
+                </a>
+                <a href="https://instagram.com/ayoub.ayaou?igshid=YmMyMTA2M2Y=">
+                    <i style="margin-right: 10px;color: #999" class="bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.min.js"></script>
+
+</body>
+
+</html>
