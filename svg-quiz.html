@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Quiz Game</title>
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+    <style>code{color: black!important}</style>
+    <link rel="stylesheet" href="./assets/vendor/remixicon/remixicon.min.css">
+    <style>html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body,html{overflow:hidden;position:relative;height:100%}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;color:#fff;user-select:none;margin:0;padding:0;counter-reset:points}a{text-decoration:none;color:inherit}section{background:#f9f9f9;padding-top:80px;overflow-y:hidden}main{background:rgb(49 216 56);color:#f9f9f9f9;border-radius:10px;padding:5px 20px 50px;width:95%;max-width:500px;margin:0 auto 214px;-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px}.text-container{text-align:center}.quiz-options{margin:60px 0}[type=radio]{border:0;height:.0625rem;width:.0625rem;position:absolute}label{display:flex;align-items:center;border-radius:5px;background:red;margin-bottom:15px;padding:6px 0;position:relative;width:100%;color:#000}label .alphabet{border-radius:5px;padding:.4rem .5rem .4rem;width:2.3rem;margin:0 1.3rem 0 .7rem;display:flex;justify-content:center;color:#000}label .icon{height:auto;position:absolute;left:92%;top:12px}label .jfdedgwfzexf4hjin{width:18px}label .jdsjkefkefkefefexco{width:22px}.a-11:valid+label,.a-14:valid+label,.a-17:valid+label,.a-19:valid+label,.a-9:valid+label,.b-10:valid+label,.b-13:valid+label,.b-15:valid+label,.b-18:valid+label,.b-22:valid+label,.b-6:valid+label,.b-7:valid+label,.c-12:valid+label,.c-16:valid+label,.c-20:valid+label,.c-21:valid+label,.c-8:valid+label,.five-a:valid+label,.four-b:valid+label,.one-b:valid+label,.three-c:valid+label,.two-a:valid+label{animation:flash .6s infinite;-webkit-animation:flash .6s infinite}#btn-over{color:#000;background-color:#f45;padding:10px 20px 10px 20px;cursor:pointer;color:#fff;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px;box-shadow:5px 5px 5px #ddd}@keyframes flash{0%{background-color:#4cf571}49%{background-color:#4cf571}50%{background-color:#4cf571}99%{background-color:#4cf571}100%{background-color:#4cf571}}input:invalid+label{background:#fff}input:invalid+label:hover{background:linear-gradient(to right,#d8d9da 10%,#fff 80%)}input:valid+label{color:#fff;pointer-events:none}#btn{border:none;border-radius:10px;background:#fff;color:#000;display:block;font-size:1.1rem;font-weight:600;width:57%;margin:0 auto;outline:0;padding:11px 0;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px;margin-top:50px}#btn:hover{background:#ddd;color:rgba(0,0,0,.749)}form:invalid #btn{pointer-events:none;background:#eee;color:#aaa}.btn:hover{background:#000;color:#fff}.score-counter{display:flex;align-items:center;justify-content:center;font-weight:700;width:246px;height:9%;margin:10px}.score-text{margin:0 20px}#game-over{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;width:100%;height:200vh;background-color:#fff}.ico{display:flex;justify-content:center}.game-over-content{display:flex;justify-content:center;flex-direction:column}@keyframes pulse{0%{opacity:1}49%{opacity:9}50%{opacity:.8}99%{opacity:.5}100%{opacity:.3}}@keyframes shine{0%{background-position:-100%}100%{background-position:100%}}.over-text-cont{text-align:center}.over-text-cont h2{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif}.over-text-cont h2::after{content:counter(points) "0/50";margin-left:15px}#refresh{color:#fff;position:relative;height:100vh}.refresh-content{display:grid;font-size:1.2rem;place-items:center;width:70%;line-height:2;margin:0 auto;text-align:center}.refresh-content svg{width:50px;height:auto;animation:pulse 1s infinite}@media (max-width:420px){main{width:92%}.jshdgdgwgdwfdfwdwjfdjwwdwdco:checked+label{-webkit-text-stroke:.1px #fff}label .jdsjkefkefkefefexco{width:16px}label .jfdedgwfzexf4hjin{width:14px}.score-counter{width:120px;height:5%;font-size:.7rem}.score-text{margin:0 20px 0 0}.refresh-content{width:90%}.refresh-content{display:grid;font-size:.8rem}}@media (max-width:325px){label .jdsjkefkefkefefexco{width:14px}label .jfdedgwfzexf4hjin{width:12px}}</style>
+</head>
+<body>
+    <section class="section-1" id="section-1">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        ال SVG عبارة عن ماذا؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio one-a jshdgdgwgdwfdfwdwjfdjwwdwdco" id="one-a" name="yes-1"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="one-a">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> لغة برمجة 
+                    </label>
+                    <input type="radio" class="input-radio one-b jshdgdgwgdwfdfwdwjfdjwwdwdin" id="one-b" name="yes-1">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="one-b">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> يمكننا من الرسم في الصفحة
+                    </label>
+                    <input type="radio" class="input-radio one-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="one-c" name="yes-1">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="one-c">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> مكتبة
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-2'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-2" id="section-2">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        للرسم بال svg في الصفحة أي وسم نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio two-a jshdgdgwgdwfdfwdwjfdjwwdwdco" id="two-a" name="yes-2"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="two-a">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> svg
+                    </label>
+                    <input type="radio" class="input-radio two-b jshdgdgwgdwfdfwdwjfdjwwdwdin" id="two-b" name="yes-2">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="two-b">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> draw
+                    </label>
+                    <input type="radio" class="input-radio two-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="two-c" name="yes-2">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="two-c">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> canvas
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-3'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-3" id="section-3">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        كلمة svg إختصار لماذا؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio three-a jshdgdgwgdwfdfwdwjfdjwwdwdco" id="three-a" name="yes-3"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="three-a">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> لا يوجد له إختصار
+                    </label>
+                    <input type="radio" class="input-radio three-b jshdgdgwgdwfdfwdwjfdjwwdwdin" id="three-b" name="yes-3">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="three-b">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> scale vector graphic
+                    </label>
+                    <input type="radio" class="input-radio three-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="three-c" name="yes-3">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="three-c">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> scalable vector graphic
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-4'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-4" id="section-4">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        لإعطاء اللوحة الخاصة بنا أبعاد أي سمة نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio four-a jshdgdgwgdwfdfwdwjfdjwwdwdco" id="four-a" name="yes-4"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="four-a">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> لا يمكن
+                    </label>
+                    <input type="radio" class="input-radio four-b jshdgdgwgdwfdfwdwjfdjwwdwdin" id="four-b" name="yes-4">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="four-b">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> width and height
+                    </label>
+                    <input type="radio" class="input-radio four-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="four-c" name="yes-4">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="four-c">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> x and y
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-5'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-5" id="section-5">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        لرسم مربع أي وسم نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio five-a jshdgdgwgdwfdfwdwjfdjwwdwdco" id="five-a" name="yes-5"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="five-a">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> rect
+                    </label>
+                    <input type="radio" class="input-radio five-b jshdgdgwgdwfdfwdwjfdjwwdwdin" id="five-b" name="yes-5">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="five-b">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> rectangle
+                    </label>
+                    <input type="radio" class="input-radio five-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="five-c" name="yes-5">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="five-c">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> shape
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-6'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-6" id="section-6">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        لإعطاء لون الخلفية للشكل الخاص بنا أي سمة نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-6 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-6" name="yes-6"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-6">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> background-color
+                    </label>
+                    <input type="radio" class="input-radio b-6 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-6" name="yes-6">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-6">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> fill
+                    </label>
+                    <input type="radio" class="input-radio c-6 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-6" name="yes-6">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-6">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> color
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-7'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-7" id="section-7">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        كيفية تحريك الشكل من اليمين واشمال والفوق وتحت أي سمة نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-7 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-7" name="yes-7"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-7">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> left and right
+                    </label>
+                    <input type="radio" class="input-radio b-7 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-7" name="yes-7">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-7">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> x and y
+                    </label>
+                    <input type="radio" class="input-radio c-7 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-7" name="yes-7">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-7">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> top and bottom
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-8'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-8" id="section-8">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        لإضافة حواف للشكل أي سمة نستخدم وأيضا مع السمة التي تمكننا من تحديد عرض الحواف؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-8 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-8" name="yes-8"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-8">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> edges and edges-width
+                    </label>
+                    <input type="radio" class="input-radio b-8 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-8" name="yes-8">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-8">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> border and -border-width
+                    </label>
+                    <input type="radio" class="input-radio c-8 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-8" name="yes-8">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-8">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> stroke and stroke-width
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-9'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-9" id="section-9">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        لرسم دائرة ماهو الوسم الذي سنستعمله؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-9 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-9" name="yes-9"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-9">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> circle
+                    </label>
+                    <input type="radio" class="input-radio b-9 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-9" name="yes-9">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-9">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> ellipse
+                    </label>
+                    <input type="radio" class="input-radio c-9 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-9" name="yes-9">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-9">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> circ
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-10'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-10" id="section-10">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        للتحكم بالدائرة من جهات x and y أي سمة نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-10 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-10" name="yes-10"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-10">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> x and y
+                    </label>
+                    <input type="radio" class="input-radio b-10 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-10" name="yes-10">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-10">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> cx and cy
+                    </label>
+                    <input type="radio" class="input-radio c-10 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-10" name="yes-10">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-10">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> rx and ry
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-11'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-11" id="section-11">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        للتحكم بحواف الدئرة أي سمة نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-11 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-11" name="yes-11"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-11">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> r
+                    </label>
+                    <input type="radio" class="input-radio b-11 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-11" name="yes-11">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-11">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> border-radius
+                    </label>
+                    <input type="radio" class="input-radio c-11 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-11" name="yes-11">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-11">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> radius
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-12'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-12" id="section-12">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        من أين يتم توسيط الدائرة؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-12 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-12" name="yes-12"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-12">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> من الجوانب
+                    </label>
+                    <input type="radio" class="input-radio b-12 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-12" name="yes-12">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-12">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> من الحواف
+                    </label>
+                    <input type="radio" class="input-radio c-12 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-12" name="yes-12">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-12">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> من القطر
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-13'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-13" id="section-13">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        لرسم شكل بوضوي أي وسم نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-13 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-13" name="yes-13"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-13">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> ege
+                    </label>
+                    <input type="radio" class="input-radio b-13 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-13" name="yes-13">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-13">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> ellipse
+                    </label>
+                    <input type="radio" class="input-radio c-13 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-13" name="yes-13">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-13">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> circle
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-14'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-14" id="section-14">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        ماهي السمات الزائدة لل ellipse ولا توجد في الدائرة؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-14 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-14" name="yes-14"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-14">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> rx and ry
+                    </label>
+                    <input type="radio" class="input-radio b-14 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-14" name="yes-14">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-14">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> cx and cy
+                    </label>
+                    <input type="radio" class="input-radio c-14 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-14" name="yes-14">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-14">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> لا أعرف
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-15'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-15" id="section-15">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        كيف أرسم خط بال SVG أي وسم نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-15 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-15" name="yes-15"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-15">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> font
+                    </label>
+                    <input type="radio" class="input-radio b-15 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-15" name="yes-15">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-15">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> line
+                    </label>
+                    <input type="radio" class="input-radio c-15 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-15" name="yes-15">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-15">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> rope
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-16'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-16" id="section-16">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        ماهي الإحداثياث الزائدة في الخط؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-16 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-16" name="yes-16"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-16">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> x, y, z
+                    </label>
+                    <input type="radio" class="input-radio b-16 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-16" name="yes-16">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-16">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> left, top, rigth, bottom
+                    </label>
+                    <input type="radio" class="input-radio c-16 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-16" name="yes-16">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-16">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> x1, x2, y1, y2
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-17'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-17" id="section-17">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        للإظهار الخط وإعطاءه لون وعرض أي سمة نستخدم؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-17 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-17" name="yes-17"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-17">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> stroke and stroke-width
+                    </label>
+                    <input type="radio" class="input-radio b-17 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-17" name="yes-17">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-17">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> background-color and width
+                    </label>
+                    <input type="radio" class="input-radio c-17 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-17" name="yes-17">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-17">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> border and border-width
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-18'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-18" id="section-18">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        هل يمكن التحكم بالشكل الخاص بنا بلغة css بدون إستعمال السمات؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-18 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-18" name="yes-18"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-18">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> لا
+                    </label>
+                    <input type="radio" class="input-radio b-18 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-18" name="yes-18">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-18">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> نعم
+                    </label>
+                    <input type="radio" class="input-radio c-18 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-18" name="yes-18">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-18">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> لا أعرف
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-19'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-19" id="section-19">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        هل يمكن حفط الشكل كصورة وعرضه في وسم img؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-19 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-19" name="yes-19"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-19">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> نعم
+                    </label>
+                    <input type="radio" class="input-radio b-19 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-19" name="yes-19">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-19">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> لا 
+                    </label>
+                    <input type="radio" class="input-radio c-19 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-19" name="yes-19">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-19">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> لا يمكن
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-20'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-20" id="section-20">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        أي سمة نستخدم لعرض صورة svg بشكل صحيج دونها لن تعرض الصورة؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-20 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-20" name="yes-20"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-20">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> <bdo dir="ltr">xml="http://www.w3.org/2000/svg"</bdo>
+                    </label>
+                    <input type="radio" class="input-radio b-20 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-20" name="yes-20">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-20">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> <bdo dir="ltr">xml:space="http://www.w3.org/2000/svg"</bdo>
+                    </label>
+                    <input type="radio" class="input-radio c-20 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-20" name="yes-20">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-20">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> <bdo dir="ltr">xmlns="http://www.w3.org/2000/svg"</bdo>
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-21'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-21" id="section-21">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        هل يمكن إستخدام ال css animtion مع ال svg
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-21 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-21" name="yes-21"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-21">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> لا أعرف
+                    </label>
+                    <input type="radio" class="input-radio b-21 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-21" name="yes-21">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-21">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> لا
+                    </label>
+                    <input type="radio" class="input-radio c-21 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-21" name="yes-21">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-21">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> نعم
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#section-22'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <section class="section-22" id="section-22">
+        <main>
+            <div class="text-container">
+                <h1 style="font-size: 40px;">SVG<i style="font-size: 40px;" class="ri-file-2-line"></i>Quiz?</h1>
+            </div>
+            <div class="quiz-options">
+                <div class="text-container">
+                    <p dir="rtl" style="font-size: 20px;">
+                        ماالذي يميز ال SVG؟
+                    </p>
+                </div>
+                <form dir="rtl">
+                    <input type="radio" class="input-radio a-22 jshdgdgwgdwfdfwdwjfdjwwdwdco" id="a-22" name="yes-22"
+                        required>
+                    <label class="radio-label jsjwjdwjdwjdwco" for="a-22">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">A)</code></span> الجودة لا تبقى كما هي عند التمدد
+                    </label>
+                    <input type="radio" class="input-radio b-22 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="b-22" name="yes-22">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="b-22">
+                        <span class="alphabet"><code style="font-size: 20px;font-weight: bold;">B)</code></span> مهما مددته تبقى الجودة كما هي
+                    </label>
+                    <input type="radio" class="input-radio c-22 jshdgdgwgdwfdfwdwjfdjwwdwdin" id="c-22" name="yes-22">
+                    <label class="radio-label jsjwjdwjdwjdwin" for="c-22">
+                        <span class="alphabet"><code><code style="font-size: 20px;font-weight: bold;">C)</code></code> </span> ليس لديه أي ميزة
+                    </label>
+                    <a id="btn" type="submit" onclick="window.location.href='#game-over'">Next</a>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <!-- GAME OVER PAGE -->
+    <section id="game-over" class="container">
+        <div class="game-over-content">
+            <span dir="rtl" style="color: #333; border-radius: 10px; font-weight: bold; text-align: center;margin: 0;background-color: #3d84f5; color: #fff; padding: 8px">
+                تهانيانا لوصلوك إلى هذه المرحلة أظنك إستمتعت يا بطل شكرا أتمنى أن تعجبك اللعبة 
+                و يمكنك رأية جميع النتائج التي حققتها سابقا هنا و للعب مرة أخرى إضغظ
+                على الزر و أعد تحميل الصفحة و وفقك الله في مسيرتك.
+            </span>
+            <div class="ico">
+                <img width="500px" src="./assets/img/1676057170247.gif" alt="">
+            </div>
+            <div class="over-text-cont">
+                <a id="btn-over" onclick="window.location.href='#section-1'">Show Result</a>
+            </div>
+        </div>
+    </section>
+    <!-- partial -->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
