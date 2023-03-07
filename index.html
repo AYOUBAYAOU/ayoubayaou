@@ -333,6 +333,18 @@ src="https://c.statcounter.com/12852365/0/cb65df84/1/" alt="site stats"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
 
+  <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registered: ', registration);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed: ', error);
+          });
+      }
+    </script>
+  
 </body>
 
 </html>
