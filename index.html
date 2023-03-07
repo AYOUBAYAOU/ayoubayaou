@@ -101,7 +101,7 @@
     cpp, c, perl, php, c#, kotlin, visual Basic, .net, visual Basic .net, Pascal,
     flex box, css flex
     " name="keywords">
-
+    <link rel="manifest" href="manifest.json">
   <!-- Favicons -->
   <link href="assets/img/ayoub.jpg" rel="icon">
 
@@ -309,16 +309,6 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.min.js"></script>
   
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LB6NYN4Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-S2LB6NYN4Q');
-</script>
-  
   <!-- Default Statcounter code for ayoub ayaou https://ayoubayaou.vercel.app/ -->
 <script type="text/javascript">
 var sc_project=12852365; 
@@ -333,18 +323,18 @@ src="https://c.statcounter.com/12852365/0/cb65df84/1/" alt="site stats"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
 
-  <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('Service Worker registered: ', registration);
-          })
-          .catch(error => {
-            console.error('Service Worker registration failed: ', error);
-          });
-      }
-    </script>
-  
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker registered: ', registration);
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed: ', error);
+      });
+  }
+</script>
+
 </body>
 
 </html>
