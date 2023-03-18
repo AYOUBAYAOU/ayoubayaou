@@ -494,6 +494,31 @@
                 في النهاية، يمكن استخدام خاصية <code>margin</code> بشكل كبير لتحديد تخطيط الصفحة ومظهر العناصر المختلفة. وهي واحدة من
                 الخصائص الأساسية في تصميم وتطوير المواقع وتطبيقات الويب.
                 <br><br>
+                <button id="add" class="btn btn-danger">margin: 20px</button>
+                <button id="notadd" class="btn btn-primary">margin: 0</button>
+                <br>
+                <style>
+                    .box {
+                        background-color: #ccc;
+                        width: 300px;
+                        height: 200px;
+                    }
+                </style>
+                <div class="box">
+                    <p>This is a box with some content inside</p>
+                </div>
+                <script>
+                    let add = document.getElementById("add");
+                    let notadd = document.getElementById("notadd");
+                    let box = document.querySelector(".box")
+                    add.addEventListener("click", () => {
+                        box.style.margin = "20px";
+                    })
+                    notadd.addEventListener("click", () => {
+                        box.style.margin = "0";
+                    })
+                </script>
+                <br><br>
                 وهكذا إنتهينا من درسنا أو مقالتنا المتواضعة أتمنى أنك فهمت
                 و وفقك الله أتمنى دعمنا بمشاركة الدرس لكي تعم الفائدة.
             </div>
