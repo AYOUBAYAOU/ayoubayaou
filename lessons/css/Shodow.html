@@ -432,14 +432,17 @@
 </pre>
 </code>
 <br><br>
-                <input type="text" id="tx" placeholder="X">
-                <input type="text" id="ty" placeholder="Y">
-                <input type="text" id="tblur" placeholder="blur">
-                <input type="text" id="tspread" placeholder="spread"> 
-                <input type="text" id="tcolor" placeholder="color"> 
+            <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+                <input type="text" id="tx" class="form-control" placeholder="X">
+                <input type="text" id="ty" class="form-control" placeholder="Y">
+                <input type="text" id="tblur" class="form-control" placeholder="blur">
+                <input type="text" id="tspread" class="form-control" placeholder="spread"> 
+                <input type="text" id="tcolor" class="form-control" placeholder="color"> 
+                <br>
                 <button class="btn btn-danger" id="tAdd">Add</button>
                 <br>
                 <h3 id="text">Hello</h3> 
+            </div>
                 <script>
                     let tx = document.getElementById("tx")
                     let ty = document.getElementById("ty")
@@ -483,14 +486,17 @@
 }
 </pre>
 </code>
-                <input type="text" id="bx" placeholder="X">
-                <input type="text" id="by" placeholder="Y">
-                <input type="text" id="bblur" placeholder="blur">
-                <input type="text" id="bspread" placeholder="spread"> 
-                <input type="text" id="bcolor" placeholder="color"> 
+                <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+                <input type="text" class="form-control" id="bx" placeholder="X">
+                <input type="text" class="form-control" id="by" placeholder="Y">
+                <input type="text" class="form-control" id="bblur" placeholder="blur">
+                <input type="text" class="form-control" id="bspread" placeholder="spread"> 
+                <input type="text" class="form-control" id="bcolor" placeholder="color"> 
+                <br>
                 <button class="btn btn-danger" id="bAdd">Add</button>
                 <br>
-                <div style="width: 100px; height: 100px; background-color: gray;" id="box"></div> 
+                <div style="width: 100px; height: 100px; background-color: gray;" id="box"></div>
+                </div> 
                 <script>
                     let bx = document.getElementById("bx")
                     let by = document.getElementById("by")
