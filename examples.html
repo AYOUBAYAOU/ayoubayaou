@@ -307,6 +307,496 @@
 
     <div class="card">
       <div class="card-body">
+        <h6 class="card-title" style="background-color: orangered;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff;display: inline-block;">#HTML</h6>
+        <h6 class="card-title" style="background-color: #34e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff;display: inline-block;">#CSS</h6>
+        <h6 class="card-title" style="background-color: #f4f42e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;display: inline-block;">#JavaScript</h6>
+        <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#htmlcssjscode2" type="button" role="tab" aria-controls="home" aria-selected="true">code</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#htmlcssjsrun2" type="button" role="tab" aria-controls="profile" aria-selected="false">Run</button>
+          </li>
+        </ul>
+        <div class="tab-content pt-2" id="borderedTabContent">
+          <div class="tab-pane fade show active" id="htmlcssjscode2" role="tabpanel" aria-labelledby="home-tab">
+            <p dir="rtl">
+              لعبة memory game بسيطة كود اللعبة جاهز للإستخدام في أي مشروع تريده يمكنك التغيير من الألوان إلى الصور على حسب رغبتك أتمنى أن تعجبكم اللعبة
+            </p>
+<p style="border-bottom: 2px solid #e8250b;width: fit-content;">HTML</p>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+<pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+      &lt;meta charset="UTF-8">
+      &lt;title>Memory Game&lt;/title>
+      &lt;style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+          margin: 0;
+          padding: 0;
+        }
+        
+        h1 {
+          text-align: center;
+        }
+        
+        #game-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 500px;
+        }
+        
+        #card-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          width: 400px;
+          height: 400px;
+          margin: 20px;
+          padding: 10px;
+          border: 5px solid #3498db;
+        }
+        
+        .card {
+          width: calc(25% - 10px);
+          height: calc(25% - 10px);
+          background-color: #e74c3c;
+          margin: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+        }
+        
+        .card:hover {
+          background-color: #c0392b;
+        }
+        
+        .card.matched {
+          background-color: #2ecc71;
+          pointer-events: none;
+        }
+        
+        #button-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin: 10px;
+        }
+        
+        button {
+          background-color: #3498db;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+        }
+        
+        button:hover {
+          background-color: #2980b9;
+        }
+        
+        #start-button:hover {
+          transform: scale(1.1);
+        }
+        
+        #reset-button:hover {
+          transform: scale(1.1);
+        }
+        
+        #message-container {
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          color: #3498db;
+        }
+        
+        @media (max-width: 768px) {
+          #card-container {
+            width: 300px;
+            height: 300px;
+          }
+        
+          .card {
+            width: calc(33.33% - 10px);
+            height: calc(33.33% - 10px);
+          }
+        }
+        &lt;/style>
+      &lt;/head>
+      &lt;body>
+      &lt;h1>Memory Game&lt;/h1>
+      &lt;div id="game-container">
+        &lt;div id="card-container">&lt;/div>
+        &lt;div id="button-container">
+          &lt;button id="start-button">Start&lt;/button>
+          &lt;button id="reset-button">Reset&lt;/button>
+        &lt;/div>
+        &lt;div id="message-container">&lt;/div>
+      &lt;/div>
+      &lt;script>
+      const cardContainer = document.getElementById("card-container");
+    const startButton = document.getElementById("start-button");
+    const resetButton = document.getElementById("reset-button");
+    const messageContainer = document.getElementById("message-container");
+    
+    const colors = [
+      "red",
+      "green",
+      "blue",
+      "yellow",
+      "orange",
+      "purple",
+      "pink",
+      "brown"
+    ];
+    
+    let cards = [];
+    let flippedCards = [];
+    let matchedCards = [];
+    let canFlip = false;
+    let numMatches = 0;
+    
+    function createCards() {
+      for (let i = 0; i < colors.length; i++) {
+        const cardOne = createCard(colors[i]);
+        const cardTwo = createCard(colors[i]);
+        cards.push(cardOne);
+        cards.push(cardTwo);
+      }
+      shuffleCards();
+    }
+    
+    function createCard(color) {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.dataset.color = color;
+      card.addEventListener("click", () => {
+        if (canFlip && !card.classList.contains("matched") && !flippedCards.includes(card)) {
+          flipCard(card);
+          flippedCards.push(card);
+          if (flippedCards.length === 2) {
+            canFlip = false;
+            checkMatch();
+          }
+        }
+      });
+      return card;
+    }
+    
+    function shuffleCards() {
+      for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+      }
+    }
+    
+    function flipCard(card) {
+      card.style.backgroundColor = card.dataset.color;
+    }
+    
+    function checkMatch() {
+      if (flippedCards[0].dataset.color === flippedCards[1].dataset.color) {
+        flippedCards[0].classList.add("matched");
+        flippedCards[1].classList.add("matched");
+        matchedCards.push(flippedCards[0]);
+        matchedCards.push(flippedCards[1]);
+        numMatches++;
+        if (numMatches === colors.length) {
+          endGame();
+        } else {
+          canFlip = true;
+          flippedCards = [];
+        }
+      } else {
+        setTimeout(() => {
+          flippedCards.forEach(card => {
+            card.style.backgroundColor = "#e74c3c";
+          });
+          flippedCards = [];
+          canFlip = true;
+        }, 1000);
+      }
+    }
+    
+    function startGame() {
+      createCards();
+      cardContainer.innerHTML = "";
+      cards.forEach(card => {
+        cardContainer.appendChild(card);
+      });
+      startButton.disabled = true;
+      resetButton.disabled = false;
+      messageContainer.innerHTML = "";
+      canFlip = true;
+    }
+    
+    function resetGame() {
+      cards = [];
+      flippedCards = [];
+      matchedCards = [];
+      numMatches = 0;
+      cardContainer.innerHTML = "";
+      startButton.disabled = false;
+      resetButton.disabled = true;
+      messageContainer.innerHTML = "";
+    }
+    
+    function endGame() {
+      messageContainer.innerHTML = "Congratulations! You won!";
+    }
+    
+    startButton.addEventListener("click", startGame);
+    resetButton.addEventListener("click", resetGame);
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+<script>
+  Prism.highlightAll();
+</script>
+          </div>
+          <div class="tab-pane fade" id="htmlcssjsrun2" role="tabpanel" aria-labelledby="profile-tab">
+            <!DOCTYPE html>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+      
+      #game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 500px;
+      }
+      
+      #card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 400px;
+        margin: 20px;
+        padding: 10px;
+        border: 5px solid #3498db;
+      }
+      
+      .card2 {
+        width: calc(25% - 10px);
+        height: calc(25% - 10px);
+        background-color: #e74c3c;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .card2:hover {
+        background-color: #c0392b;
+      }
+      
+      .card2.matched {
+        background-color: #2ecc71;
+        pointer-events: none;
+      }
+      
+      #button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 10px;
+      }
+      
+      button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      button:hover {
+        background-color: #2980b9;
+      }
+      
+      #start-button:hover {
+        transform: scale(1.1);
+      }
+      
+      #reset-button:hover {
+        transform: scale(1.1);
+      }
+      
+      #message-container {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #3498db;
+      }
+      
+      @media (max-width: 768px) {
+        #card-container {
+          width: 300px;
+          height: 300px;
+        }
+      
+        .card2 {
+          width: calc(33.33% - 10px);
+          height: calc(33.33% - 10px);
+        }
+      }
+    </style>
+    <h1>Memory Game</h1>
+    <div id="game-container">
+      <div id="card-container"></div>
+      <div id="button-container">
+        <button id="start-button">Start</button>
+        <button id="reset-button">Reset</button>
+      </div>
+      <div id="message-container"></div>
+    </div>
+    <script>
+      const cardContainer = document.getElementById("card-container");
+const startButton = document.getElementById("start-button");
+const resetButton = document.getElementById("reset-button");
+const messageContainer = document.getElementById("message-container");
+
+const colors = [
+  "red",
+  "green",
+  "blue",
+  "yellow",
+  "orange",
+  "purple",
+  "pink",
+  "brown"
+];
+
+let cards = [];
+let flippedCards = [];
+let matchedCards = [];
+let canFlip = false;
+let numMatches = 0;
+
+function createCards() {
+  for (let i = 0; i < colors.length; i++) {
+    const cardOne = createCard(colors[i]);
+    const cardTwo = createCard(colors[i]);
+    cards.push(cardOne);
+    cards.push(cardTwo);
+  }
+  shuffleCards();
+}
+
+function createCard(color) {
+  const card = document.createElement("div");
+  card.classList.add("card2");
+  card.dataset.color = color;
+  card.addEventListener("click", () => {
+    if (canFlip && !card.classList.contains("matched") && !flippedCards.includes(card)) {
+      flipCard(card);
+      flippedCards.push(card);
+      if (flippedCards.length === 2) {
+        canFlip = false;
+        checkMatch();
+      }
+    }
+  });
+  return card;
+}
+
+function shuffleCards() {
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+}
+
+function flipCard(card) {
+  card.style.backgroundColor = card.dataset.color;
+}
+
+function checkMatch() {
+  if (flippedCards[0].dataset.color === flippedCards[1].dataset.color) {
+    flippedCards[0].classList.add("matched");
+    flippedCards[1].classList.add("matched");
+    matchedCards.push(flippedCards[0]);
+    matchedCards.push(flippedCards[1]);
+    numMatches++;
+    if (numMatches === colors.length) {
+      endGame();
+    } else {
+      canFlip = true;
+      flippedCards = [];
+    }
+  } else {
+    setTimeout(() => {
+      flippedCards.forEach(card => {
+        card.style.backgroundColor = "#e74c3c";
+      });
+      flippedCards = [];
+      canFlip = true;
+    }, 1000);
+  }
+}
+
+function startGame() {
+  createCards();
+  cardContainer.innerHTML = "";
+  cards.forEach(card => {
+    cardContainer.appendChild(card);
+  });
+  startButton.disabled = true;
+  resetButton.disabled = false;
+  messageContainer.innerHTML = "";
+  canFlip = true;
+}
+
+function resetGame() {
+  cards = [];
+  flippedCards = [];
+  matchedCards = [];
+  numMatches = 0;
+  cardContainer.innerHTML = "";
+  startButton.disabled = false;
+  resetButton.disabled = true;
+  messageContainer.innerHTML = "";
+}
+
+function endGame() {
+  messageContainer.innerHTML = "Congratulations! You won!";
+}
+
+startButton.addEventListener("click", startGame);
+resetButton.addEventListener("click", resetGame);
+    </script>
+          </div>
+        </div><!-- End Bordered Tabs -->
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
         <h6 class="card-title" style="background-color: #34e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff">#CSS</h6>
         <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
           <li class="nav-item" role="presentation">
