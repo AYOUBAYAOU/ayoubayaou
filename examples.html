@@ -117,7 +117,8 @@
       outline: none;
     }
   </style>
-
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -305,6 +306,127 @@
   </aside>
   <main id="main" class="main">
 
+
+
+
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title" style="background-color: orangered;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff;display: inline-block;">#HTML</h6>
+        <h6 class="card-title" style="background-color: #34e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff;display: inline-block;">#CSS</h6>
+        <h6 class="card-title" style="background-color: #f4f42e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;display: inline-block;">#JavaScript</h6>
+        <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#htmlcssjscode8" type="button" role="tab" aria-controls="home" aria-selected="true">code</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#htmlcssjsrun8" type="button" role="tab" aria-controls="profile" aria-selected="false">Run</button>
+          </li>
+        </ul>
+        <div class="tab-content pt-2" id="borderedTabContent">
+          <div class="tab-pane fade show active" id="htmlcssjscode8" role="tabpanel" aria-labelledby="home-tab">
+            <p dir="rtl">
+              لعبة memory game بسيطة كود اللعبة جاهز للإستخدام في أي مشروع تريده يمكنك التغيير من الألوان إلى الصور على حسب رغبتك أتمنى أن تعجبكم اللعبة
+            </p>
+<p style="border-bottom: 2px solid #e8250b;width: fit-content;">HTML</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>&lt;/title>
+    &lt;script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js">&lt;/script>
+    &lt;script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.0.4/dist/mobilenet.min.js">&lt;/script>
+&lt;/head>
+&lt;body>
+    &lt;h1>تحليل الصور باستخدام الذكاء الاصطناعي&lt;/h1>
+    &lt;input type="file" id="image-selector" onchange="loadImage()" />
+    &lt;img id="selected-image" src="" />
+    &lt;button onclick="classifyImage()">تصنيف الصورة&lt;/button>
+    &lt;script>
+        let model;
+        async function loadModel() {
+            model = await mobilenet.load();
+        }
+        loadModel();
+        function loadImage() {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const dataURL = reader.result;
+                const image = document.getElementById('selected-image');
+                image.src = dataURL;
+                image.style.display = 'block';
+            }
+            const file = document.getElementById('image-selector').files[0];
+            reader.readAsDataURL(file);
+        }
+        async function classifyImage() {
+            const image = document.getElementById('selected-image');
+            const result = await model.classify(image);
+            console.log(result);
+            alert(`هذه الصورة تحتوي على ${result[0].className}`);
+        }
+    &lt;/script>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+<script>
+  Prism.highlightAll();
+</script>
+          </div>
+          <div class="tab-pane fade" id="htmlcssjsrun8" role="tabpanel" aria-labelledby="profile-tab">
+            <html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.0.4/dist/mobilenet.min.js"></script>
+</head>
+
+<body>
+    <h1>تحليل الصور باستخدام الذكاء الاصطناعي</h1>
+    <input type="file" id="image-selector" onchange="loadImage()" />
+    <img id="selected-image" src="" />
+    <button onclick="classifyImage()">تصنيف الصورة</button>
+    <script>
+        let model;
+        async function loadModel() {
+            model = await mobilenet.load();
+        }
+        loadModel();
+        function loadImage() {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const dataURL = reader.result;
+                const image = document.getElementById('selected-image');
+                image.src = dataURL;
+                image.style.display = 'block';
+            }
+            const file = document.getElementById('image-selector').files[0];
+            reader.readAsDataURL(file);
+        }
+        async function classifyImage() {
+            const image = document.getElementById('selected-image');
+            const result = await model.classify(image);
+            console.log(result);
+            alert(`هذه الصورة تحتوي على ${result[0].className}`);
+        }
+    </script>
+</body>
+
+</html>
+          </div>
+        </div><!-- End Bordered Tabs -->
+      </div>
+    </div>
+
+
+
+
+
     <div class="card">
       <div class="card-body">
         <h6 class="card-title" style="background-color: orangered;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff;display: inline-block;">#HTML</h6>
@@ -324,8 +446,7 @@
               لعبة memory game بسيطة كود اللعبة جاهز للإستخدام في أي مشروع تريده يمكنك التغيير من الألوان إلى الصور على حسب رغبتك أتمنى أن تعجبكم اللعبة
             </p>
 <p style="border-bottom: 2px solid #e8250b;width: fit-content;">HTML</p>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+
 <pre><code class="language-html">&lt;!DOCTYPE html>
 &lt;html>
     &lt;head>
@@ -567,6 +688,12 @@
           <div class="tab-pane fade" id="htmlcssjsrun2" role="tabpanel" aria-labelledby="profile-tab">
             <!DOCTYPE html>
     <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
       
       h1 {
         text-align: center;
@@ -576,7 +703,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100%;
+        height: 500px;
       }
       
       #card-container {
@@ -585,6 +712,7 @@
         justify-content: center;
         align-items: center;
         width: 400px;
+        height: 400px;
         margin: 20px;
         padding: 10px;
         border: 5px solid #3498db;
@@ -651,7 +779,6 @@
         #card-container {
           width: 300px;
           height: 300px;
-          overflow: auto;
         }
       
         .card2 {
