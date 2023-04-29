@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rect</title>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+        }
+
+        svg {
+            margin: 0 auto;
+            display: block;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #f45;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .result.success {
+            color: green;
+        }
+
+        .result.failure {
+            color: red;
+        }
+        .cont {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .shape {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cont #text {
+            margin-top: 20px;
+            padding: 10px;
+            outline: none;
+            width: 100%;
+            height: 200px;
+        }
+        #text::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+
+<body>
+        <div class="cont">
+        <div class="shape">
+            <svg width="300" height="200" viewBox="0 0 300 200">
+                <rect x="50" y="50" width="200" height="100" fill="#f1c40f" stroke="#e67e22" stroke-width="5" rx="10" ry="10" />
+            </svg>
+        </div>
+        <pre id="text" contenteditable="true"><code class="language-html"></code></pre>
+    </div>
+    <button id="check-btn">Check Drawing</button>
+    <div class="result"></div>
+
+    <script>
+        document.body.addEventListener("contextmenu", (e) => {e.preventDefault()});
+        Prism.highlightAll();
+        const checkBtn = document.getElementById('check-btn');
+        const resultDiv = document.querySelector('.result');
+        const svg = document.querySelector('svg');
+        const rect = document.querySelector('rect');
+        //prompt('');
+        checkBtn.addEventListener('click', () => {
+            const userSvg = document.getElementById("text").innerText;
+            const parser = new DOMParser();
+            const userDoc = parser.parseFromString(userSvg, 'image/svg+xml');
+
+            const userRect = userDoc.querySelector('rect');
+            if (!userRect) {
+                resultDiv.textContent = 'Invalid SVG: No rectangle found';
+                resultDiv.classList.remove('success');
+                resultDiv.classList.add('failure');
+                return;
+            }
+
+            const userX = parseFloat(userRect.getAttribute('x'));
+            const userY = parseFloat(userRect.getAttribute('y'));
+            const userWidth = parseFloat(userRect.getAttribute('width'));
+            const userHeight = parseFloat(userRect.getAttribute('height'));
+            const userRx = parseFloat(userRect.getAttribute('rx'));
+            const userRy = parseFloat(userRect.getAttribute('ry'));
+
+            const originalX = parseFloat(rect.getAttribute('x'));
+            const originalY = parseFloat(rect.getAttribute('y'));
+            const originalWidth = parseFloat(rect.getAttribute('width'));
+            const originalHeight = parseFloat(rect.getAttribute('height'));
+            const originalRx = parseFloat(rect.getAttribute('rx'));
+            const originalRy = parseFloat(rect.getAttribute('ry'));
+
+            const epsilon = 0.5;
+            const xDiff = Math.abs(userX - originalX);
+            const yDiff = Math.abs(userY - originalY);
+            const widthDiff = Math.abs(userWidth - originalWidth);
+            const heightDiff = Math.abs(userHeight - originalHeight);
+            const rxDiff = Math.abs(userRx - originalRx);
+            const ryDiff = Math.abs(userRy - originalRy);
+
+            if (xDiff <= epsilon && yDiff <= epsilon && widthDiff <= epsilon && heightDiff <= epsilon && rxDiff <= epsilon && ryDiff <= epsilon) {
+                resultDiv.textContent = 'Drawing is correct!';
+                resultDiv.classList.remove('failure');
+                resultDiv.classList.add('success');
+            } else {
+                resultDiv.textContent = 'Drawing is incorrect';
+                resultDiv.classList.remove('success');
+                resultDiv.classList.add('failure');
+            }
+        });
+    </script>
+</body>
+
+</html>

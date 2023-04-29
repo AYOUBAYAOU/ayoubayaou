@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Drawing Game</title>
+    <style>
+        :root {
+            --space: 2rem;
+            --radius: 0.15rem;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #1f1f1f;
+            color: #e6e6e6;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+
+        .page-header {
+            margin: calc(var(--space) * 4) 0;
+            padding: 0 var(--space);
+        }
+
+        .page-header__title {
+            margin: 0;
+            font-size: clamp(3rem, 10vw, 6rem);
+        }
+
+        .page-section {
+            overflow: hidden;
+            margin: calc(var(--space) * 4) 0;
+        }
+
+        .page-section__title {
+            margin: calc(var(--space) / 2) 0;
+            padding: 0 var(--space);
+            font-size: clamp(2rem, 5vw, 3rem);
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .cards {
+            display: flex;
+            width: 100%;
+            padding: var(--space);
+            overflow: scroll;
+            overscroll-behavior-x: contain;
+            scrollbar-width: none;
+        }
+
+        .cards::-webkit-scrollbar {
+            width: 0 !important;
+            display: none;
+        }
+
+        .cards>*+* {
+            margin-left: var(--space);
+        }
+
+        .cards::after {
+            content: "";
+            display: block;
+            flex: 0 0 var(--space);
+        }
+
+        .card {
+            flex: 1 0 auto;
+            width: 100%;
+            max-width: 250px;
+            opacity: 0;
+            background-color: #ddd;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transform: translateX(400px);
+        }
+
+        .card__image {
+            width: 100%;
+        }
+
+        .card__image::before {
+            content: "";
+            display: block;
+            padding-bottom: calc(100% / (16 / 9));
+        }
+
+        .card__content {
+            padding: var(--space);
+        }
+
+        .card__title {
+            margin-bottom: calc(var(--space) / 2);
+            width: 70%;
+            height: 24px;
+            border-radius: var(--radius);
+            color: #000;
+        }
+
+        .card__line a {
+            height: 12px;
+            border-radius: var(--radius);
+            color: #fff;
+            text-decoration: none;
+            background-color: #f45;
+            padding: 10px 30px;
+            font-weight: bold;
+        }
+
+        .card__line+.card__line {
+            margin-top: calc(var(--space) / 4);
+        }
+
+        .card__line:last-child {
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+    </header>
+    <section class="page-section">
+        <h2 class="page-section__title">Very Easy</h2>
+        <div class="cards">
+            <div class="card">
+                <div style="padding: 20px;">
+                    <svg width="100%" height="100%" viewBox="0 0 300 200">
+                        <rect width="100%" height="100%" fill="#f1c40f" stroke="#e67e22" stroke-width="5" rx="10"
+                            ry="10" />
+                    </svg>
+                </div>
+                <div class="card__content">
+                    <div class="card__title">Draw a square with svg</div>
+                    <br>
+                    <div class="card__line">
+                        <a href="./svg-all-games/rect.html">Go!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
+        <h2 class="page-section__title">Easy</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
+        <h2 class="page-section__title">medium</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
+        <h2 class="page-section__title">Hard</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
+        <h2 class="page-section__title">Very Hard</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
+        <h2 class="page-section__title">Extemely difficult</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                    <div class="card__line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
+    <script>
+        document.body.addEventListener("contextmenu", (e) => { e.preventDefault() });
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".cards").forEach((row) => {
+            const tl = gsap.timeline();
+            const cards = row.querySelectorAll(".card");
+            const title = row.parentNode.querySelector(".page-section__title");
+
+            ScrollTrigger.create({
+                trigger: row,
+                start: "+=200px bottom",
+                animation: tl
+                    .to(title, {
+                        duration: 0.5,
+                        opacity: 1,
+                        x: 0,
+                        ease: "back.out(1.4)"
+                    })
+                    .to(cards, {
+                        duration: 1,
+                        opacity: 1,
+                        x: 0,
+                        ease: "elastic.out(1, 0.75)",
+                        stagger: { axis: "x", each: 0.04 }
+                    }, "-=0.2")
+            });
+        });
+
+    </script>
+</body>
+
+</html>
