@@ -316,6 +316,251 @@
         <h6 class="card-title" style="background-color: #f4f42e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;display: inline-block;">#JavaScript</h6>
         <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
           <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#htmlcssjscode20" type="button" role="tab" aria-controls="home" aria-selected="true">code</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#htmlcssjsrun20" type="button" role="tab" aria-controls="profile" aria-selected="false">Run</button>
+          </li>
+        </ul>
+        <div class="tab-content pt-2" id="borderedTabContent">
+          <div class="tab-pane fade show active" id="htmlcssjscode20" role="tabpanel" aria-labelledby="home-tab">
+            <p dir="rtl">
+              قم فقط بتبديل CLIENT_ID إلى معرف العميل الخاص بحساب PayPal
+            </p>
+<p style="border-bottom: 2px solid #e8250b;width: fit-content;">HTML</p>
+
+<pre><code class="language-html">
+&lt;div id="locked-card" class="card-container">
+  &lt;div class="card-header">
+    &lt;i class="fas fa-lock card-lock">&lt;/i>
+    &lt;h2>This card is locked&lt;/h2>
+  &lt;/div>
+  &lt;div class="card-body">
+    &lt;p>To unlock, please pay $10 via PayPal:&lt;/p>
+    &lt;div id="paypal-button-container">&lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;div id="unlocked-card" class="card-container" style="display: none;">
+  &lt;div class="card-header">
+    &lt;h2>This card is now unlocked!&lt;/h2>
+  &lt;/div>
+  &lt;div class="card-body">
+    &lt;p>Thank you for your payment.&lt;/p>
+    &lt;a href="other-page.html" class="card-button">Go to Other Page&lt;/a>
+  &lt;/div>
+&lt;/div>
+
+&lt;script src="https://www.paypal.com/sdk/js?client-id=CLIENT_ID">&lt;/script>
+
+&lt;style>
+.card-container {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+}
+.card-lock {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.card-body {
+  margin-top: 20px;
+}
+.card-button {
+  padding: 10px 20px;
+  background-color: #0099ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+.card-button:hover {
+  background-color: #0077cc;
+}
+&lt;/style>
+
+&lt;script>
+paypal.Buttons({
+  // Set up the transaction
+  createOrder: function(data, actions) {
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          currency_code: 'USD',
+          value: '10.00'
+        }
+      }]
+    });
+  },
+
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      if (details.purchase_units[0].amount.value === '10.00') {
+        document.getElementById('locked-card').style.display = 'none';
+        document.getElementById('unlocked-card').style.display = 'block';
+        
+        localStorage.setItem('payment_verified', 'true');
+      } else {
+        alert('Incorrect payment amount. Please pay $10.');
+      }
+    });
+  },
+
+  onError: function(err) {
+    alert('Payment failed!');
+  }
+}).render('#paypal-button-container');
+
+window.onload = function() {
+  checkPaymentStatus();
+}
+
+function checkPaymentStatus() {
+  var paymentVerified = localStorage.getItem('payment_verified');
+  
+  if (paymentVerified === 'true') {
+    document.getElementById('locked-card').style.display = 'none';
+    document.getElementById('unlocked-card').style.display = 'block';
+  } else {
+    document.getElementById('paypal-button').disabled = true;
+  }
+}
+&lt;/script>
+</code></pre>
+<script>
+  Prism.highlightAll();
+</script>
+          </div>
+          <div class="tab-pane fade" id="htmlcssjsrun20" role="tabpanel" aria-labelledby="profile-tab">
+<!-- HTML code for the locked card -->
+<div id="locked-card" class="card-container">
+  <div class="card-header">
+    <i class="fas fa-lock card-lock"></i>
+    <h2>This card is locked</h2>
+  </div>
+  <div class="card-body">
+    <p>To unlock, please pay $10 via PayPal:</p>
+    <div id="paypal-button-container"></div>
+  </div>
+</div>
+
+<!-- HTML code for the unlocked card -->
+<div id="unlocked-card" class="card-container" style="display: none;">
+  <div class="card-header">
+    <h2>This card is now unlocked!</h2>
+  </div>
+  <div class="card-body">
+    <p>Thank you for your payment.</p>
+    <a href="other-page.html" class="card-button">Go to Other Page</a>
+  </div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=CLIENT_ID"></script>
+<!-- CHANGE THE CLIENT ID -->
+
+<style>
+.card-container {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+}
+.card-lock {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.card-body {
+  margin-top: 20px;
+}
+.card-button {
+  padding: 10px 20px;
+  background-color: #0099ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+.card-button:hover {
+  background-color: #0077cc;
+}
+</style>
+
+<script>
+// Initialize the PayPal JavaScript SDK
+paypal.Buttons({
+  // Set up the transaction
+  createOrder: function(data, actions) {
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          currency_code: 'USD',
+          value: '10.00'
+        }
+      }]
+    });
+  },
+
+  // Finalize the transaction
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      if (details.purchase_units[0].amount.value === '10.00') {
+        document.getElementById('locked-card').style.display = 'none';
+        document.getElementById('unlocked-card').style.display = 'block';
+        
+        localStorage.setItem('payment_verified', 'true');
+      } else {
+        alert('Incorrect payment amount. Please pay $10.');
+      }
+    });
+  },
+
+  onError: function(err) {
+    alert('Payment failed!');
+  }
+}).render('#paypal-button-container');
+
+window.onload = function() {
+  checkPaymentStatus();
+}
+
+function checkPaymentStatus() {
+  var paymentVerified = localStorage.getItem('payment_verified');
+  
+  if (paymentVerified === 'true') {
+    document.getElementById('locked-card').style.display = 'none';
+    document.getElementById('unlocked-card').style.display = 'block';
+  } else {
+    document.getElementById('paypal-button').disabled = true;
+  }
+}
+</script>
+          </div>
+        </div><!-- End Bordered Tabs -->
+      </div>
+    </div>
+
+
+
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title" style="background-color: orangered;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff;display: inline-block;">#HTML</h6>
+        <h6 class="card-title" style="background-color: #34e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;color: #fff;display: inline-block;">#CSS</h6>
+        <h6 class="card-title" style="background-color: #f4f42e;width: fit-content;padding: 5px; margin-top: 5px; border-radius: 10px;font-size: 16px;display: inline-block;">#JavaScript</h6>
+        <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+          <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#htmlcssjscode8" type="button" role="tab" aria-controls="home" aria-selected="true">code</button>
           </li>
           <li class="nav-item" role="presentation">
@@ -325,7 +570,7 @@
         <div class="tab-content pt-2" id="borderedTabContent">
           <div class="tab-pane fade show active" id="htmlcssjscode8" role="tabpanel" aria-labelledby="home-tab">
             <p dir="rtl">
-              تحليل الصور باستخدام الذكاء الاصطناعي 
+              لعبة memory game بسيطة كود اللعبة جاهز للإستخدام في أي مشروع تريده يمكنك التغيير من الألوان إلى الصور على حسب رغبتك أتمنى أن تعجبكم اللعبة
             </p>
 <p style="border-bottom: 2px solid #e8250b;width: fit-content;">HTML</p>
 
