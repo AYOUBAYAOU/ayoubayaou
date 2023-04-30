@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
   <title>Ayoub Ayaou</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5335079644432627"
-     crossorigin="anonymous"></script>
   <meta
     content="هذا الموقع عبارة عن موقع تعليمي في مجال البرمجة يهدف إلى تطوير المهارات الخاصة بك في مجال البرمجة من خلال تقديم العديد من الأقسام مثل قسم التحديات الذي نقدم فيه العديد من التحديات بمختلف لغات البرمجة للتطوير من مستواك البرمجي وحل كل التحديات وأيضا نقد العديد من الأمثلة حول أكواد لغات أخرى جاهزة لتمكينك من الحصول على الكود وإستخدامه في مشروعك بطريقة سهلة وبسيطة ونقدم أيضا العديد من الألعاب الهادفة لإختبار مستواك البرمجي من خلال عدة لغات هناك ألعاب مثل لعبة الأسئلة و لعبة ماهو مخرج الكود ماذا تنتطر خمن وشغل مخك وأيضا نقدم قسم الشروحات حيت نقدم فيه مجموعة من الأكواد من مختلف اللغات ونقوم بشرحه لك ودوره ومع النتيجة ولدينا قسم آخر وهو قسم المقالات نقدم فيه العديد من المقالات في مختلف المجالات البرمجية للتطوير من مستواك والآن مع قسم القناة حيث نقدم فيها العديد من الكورسات المجانية يمكنك الإطلاع على معلومات عن القناة للفهم أكثر هنا وأيضا نقدم أخبار عن القناة ونجيب عن كل الأسئلة بخصوصها و لذينا أيضا قسم آخر وهو قسم الأسئلة حيث نجيب فيه عن أغلب الأسئلة التي تحيرك في مجال البرمجة و هنا في قسم الموقع ستتعرف على معلومات الموقع و أخباره وسنجيب عن الأسئلة حول تحديثاثه القادمة ولذينا قسم الملف الشخصي ستتعرف فيه علي و ستجد هنا جميع روابط فايسبوك يوتيوب أنستغرام للتواصل معنا أو لدعمنا ولذينا قسم عنا وهو ستتعرف فيه عنا وسيعرفك عن الموقع ولذينا قسم التواصل معنا لتتواصل معنا و تقدم لنا نصائحك لتحسين الموقع و المشاكل التي تواجهك فيه لتحسين الموقع ولذينا أيضا قسم سياسة الخصوصية يعني معروف وأخيرا قسم الدعم يمكنك أن تدعمني بأي قدر من المال للتطوير من الموقع أو بدعوة من الله وشكرا سنطور في الموقع دائما وسنطيف العديد من الأقسام إن شاء الله طبعا كل المحتوى حصري كتبت كل شيء بنفسي ليس هناك نسخ ولصق كما يظهر لك كل شيء حصري وشكرا لوقتك و وفقك الله."
     name="description">
@@ -103,12 +102,13 @@
     cpp, c, perl, php, c#, kotlin, visual Basic, .net, visual Basic .net, Pascal,
     " name="keywords">
 
-
-  <!-- ayoub icon -->
-  <link href="assets/img/ayoub.jpg" rel="icon">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/style.min.css" rel="stylesheet">
+    
+    <!-- ayoub icon -->
+    <link href="assets/img/ayoub.jpg" rel="icon">
+    
+    <!-- Main CSS File -->
+    <link href="assets/css/style.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/darkreader/4.9.58/darkreader.js" integrity="sha512-SVegqt9Q4E2cRDZ5alp9NLqLLJEAh6Ske9I/iU37Jiq0fHSFbkIsIbaIGYPcadf1JBLzdxPrkqfH1cpTuBQJvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -129,9 +129,41 @@
     <i class="bi bi-list toggle-sidebar-btn"></i>
     <div class="d-flex align-items-center justify-content-between">
       <span class="logo d-flex align-items-center">
-        <span class="d-none d-lg-block"><span class="first-letter">A</span><span class="seonde-letter">youb
-            Ayaou</span></span>
+        <span class="d-none d-lg-block"><span class="first-letter">A</span><span class="seonde-letter">youb Ayaou</span></span>
       </span>
+      <button class="ri-moon-fill" style="border: none;outline:none" onclick="toggleDarkMode()"></button>
+      <script>
+        let isDarkMode = false;
+        
+        if (localStorage.getItem('isDarkMode') === 'true') {
+          enableDarkMode();
+          isDarkMode = true;
+        }
+        
+        function toggleDarkMode() {
+          if (isDarkMode) {
+            disableDarkMode();
+          } else {
+            enableDarkMode();
+          }
+          isDarkMode = !isDarkMode;
+          localStorage.setItem('isDarkMode', isDarkMode);
+        }
+        
+        function enableDarkMode() {
+          DarkReader.enable({
+            darkModeBackgroundColor: '#181818',
+          });
+          document.body.style.backgroundColor = '#181818';
+          document.body.style.color = '#f8f8f8';
+        }
+        
+        function disableDarkMode() {
+          DarkReader.disable();
+          document.body.style.backgroundColor = 'white';
+          document.body.style.color = 'black';
+        }
+      </script>
     </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">
@@ -235,22 +267,6 @@
     </ul>
     </li>
 
-<li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#games" data-bs-toggle="collapse" href="#">
-        <i class="ri-game-line"></i><span>Games</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="games" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="games/svg-dawing-game.html">
-            <i class="bi bi-circle"></i><span>SVG Drawing Game</span>
-          </a>
-          <a href="quiz.html">
-            <i class="bi bi-circle"></i><span>Quiz Game</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-
     <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
         <i class="ri-youtube-line"></i><span>Channel</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -344,7 +360,7 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <div class="section dashboard">
+    <div data-darkreader-inline style="background-color:white; color:black;" class="section dashboard">
       <div class="row">
 
         <!-- Left side columns -->
@@ -357,7 +373,7 @@
             <div class="col-12">
               <div class="card top-selling overflow-auto">
 
-                <div class="card-body pb-0">
+                <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body pb-0">
                   <h5 class="card-title">آخر التحديات</h5>
 
                   <div dir="ltr" style="
@@ -392,7 +408,7 @@
               <!-- last Articls -->
               <div class="card">
 
-                <div class="card-body pb-0">
+                <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body pb-0">
                   <h5 class="card-title">آخر المقالات</h5>
 
                   <div class="news">
@@ -438,7 +454,7 @@
               </div><!-- End last Articls -->
               <div class="card">
 
-                <div class="card-body pb-0">
+                <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body pb-0">
                   <h5 class="card-title">آخر الدروس</h5>
 
                   <div class="news">
@@ -468,10 +484,10 @@
 
             </div><!-- End Top Selling -->
             <!-- Recent Activity -->
-            <div class="card">
+            <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card">
 
-              <div class="card-body">
-                <h5 class="card-title">الأسئلة الشائعة</h5>
+              <div  class="card-body">
+                <h5  class="card-title">الأسئلة الشائعة</h5>
 
                 <div style="margin: 19px 20px 0 0" dir="rtl" class="activity">
 
@@ -556,7 +572,7 @@
             <div class="col-12">
               <div class="card top-selling overflow-auto">
 
-                <div class="card-body pb-0">
+                <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body pb-0">
                   <h5 class="card-title">آخر الألعاب</h5>
 
                   <div dir="ltr" style="
@@ -610,7 +626,7 @@
           <!-- last Articls -->
           <div class="card">
 
-            <div class="card-body pb-0">
+            <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body pb-0">
               <h5 class="card-title">آخر الشروحات</h5>
 
               <div class="news">
@@ -667,7 +683,7 @@
           <!-- last Articls -->
           <div class="card">
 
-            <div class="card-body pb-0">
+            <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body pb-0">
               <h5 class="card-title">آخر المخرجات</h5>
 
               <div class="news">
@@ -716,7 +732,7 @@
           <!-- last Articls -->
           <div class="card">
 
-            <div class="card-body pb-0">
+            <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body pb-0">
               <h5 class="card-title">كيفية...</h5>
 
               <div class="news">
@@ -741,11 +757,11 @@
             </div>
           </div>
           <div class="card">
-            <div class="card-body">
+            <div data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="card-body">
               <h5 dir="rtl" class="card-title">جميع العناصر</h5>
 
               <!-- List group With badges -->
-              <ul class="list-group">
+              <ul data-darkreader-inline style="--darkreader-border: 1px solid black;background-color:white; color:black;" class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                   <span style="background-color: #ff4d4d;" class="badge rounded-pill">349</span>
                   عدد كل صفحات الموقع
@@ -809,6 +825,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.min.js"></script>
+
 </body>
 
 </html>
