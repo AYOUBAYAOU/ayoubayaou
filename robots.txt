@@ -1,3 +1,4 @@
 User-Agent: *
 Allow: /
 
+Sitemap: https://ayoubayaou.vercel.app/sitemap.xml
